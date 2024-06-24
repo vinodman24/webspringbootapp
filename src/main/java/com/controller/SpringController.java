@@ -39,11 +39,11 @@ public class SpringController {
             })
     @ResponseBody
     public List<User> getAllUsers() {
-        try{
-                TimeUnit.SECONDS.sleep(45);
-        } catch (interruptedexception e) {
-          System.out.println("Exception ");
-        }
+         try { 
+			 TimeUnit.SECONDS.sleep(45); 
+			 } catch (InterruptedException e) {
+		 System.out.println("Thread interrupted"); 
+		 }
         return userRepository.findAll();
     }
 
