@@ -40,8 +40,8 @@ public class SpringController {
     public List<User> getAllUsers() {
         try{
                 TimeUnit.SECONDS.sleep(45);
-        } catch (interruptedexception e){
-System.out.println("Exception ")
+        } catch (interruptedexception e) {
+          System.out.println("Exception ");
         }
         return userRepository.findAll();
     }
