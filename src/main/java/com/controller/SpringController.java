@@ -23,7 +23,7 @@ public class SpringController
 public String helloWorld()
 {
 	try { 
-		 TimeUnit.SECONDS.sleep(45); 
+		 TimeUnit.SECONDS.sleep(65); 
 		 } catch (InterruptedException e) {
 	 System.out.println("Thread interrupted"); 
 	 }
