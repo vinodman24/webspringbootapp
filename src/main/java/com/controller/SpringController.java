@@ -49,6 +49,29 @@ public List<User> getAllUsers() {
 	 List<User> users = new ArrayList<>();
      users.add(new User(1, "John Doe"));
      users.add(new User(2, "Dow"));
+     users.add(new User(3, "after sleep 65sec"));
+     return users;
+	 
+}
+	@GetMapping("/user")
+@Operation(summary = "Returns all users", tags = {"User",},
+        responses = {
+                @ApiResponse(responseCode = "200",
+                        description = "Returns all users",
+                        content = @Content(mediaType = "application/json",
+                                schema = @Schema(implementation = User.class)))
+        })
+@ResponseBody
+public List<User> getUsers() {
+	
+	 try { 
+		 TimeUnit.SECONDS.sleep(35); 
+		 } catch (InterruptedException e) {
+	 System.out.println("Thread interrupted"); 
+	 }
+	 List<User> users = new ArrayList<>();
+     users.add(new User(1, "after sleep 35"));
+     users.add(new User(2, "Dow"));
      return users;
 	 
 }
